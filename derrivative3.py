@@ -107,7 +107,7 @@ def derrivative(expression, l = []):
         return '(' + derrivative('', l[:i]) + '+' + derrivative('', l[i+1:]) + ')'
     if '-' in l:
         i = l.index('-')
-        return '(' + derrivative('', l[:i]) + '+' + derrivative('', l[i+1:]) + ')'
+        return '(' + derrivative('', l[:i]) + '-' + derrivative('', l[i+1:]) + ')'
     if '*' in l:
         i = l.index('*')
         return derrivative('', l[:i]) + '*' + combining(l[i+1:]) + '+' + combining(l[:i]) + '*' + derrivative('', l[i+1:])
